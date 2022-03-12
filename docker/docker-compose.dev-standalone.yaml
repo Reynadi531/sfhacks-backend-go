@@ -1,0 +1,14 @@
+version: "3"
+services:
+  book_crud:
+    build:
+        context: ../
+        dockerfile: docker/dev.Dockerfile
+    container_name: book_crud_api
+    ports:
+      - 3000:3000
+    volumes:
+      - ../:/app
+    restart: unless-stopped
+    env_file:
+      - app.env

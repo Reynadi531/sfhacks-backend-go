@@ -1,0 +1,27 @@
+version: '3'
+services:
+  sfhacks-go:
+    build:
+      context: ../
+      dockerfile: docker/dev.Dockerfile
+    container_name: sfhacks_go_api
+    ports:
+      - 3000:3000
+    volumes:
+      - ../:/app
+    restart: unless-stopped
+    env_file:
+      - app.env
+    depends_on:
+      - mongo
+
+  mongo:
+    container_name: mongo_dev
+    image: mongo
+    restart: unless-stopped
+    env_file:
+      - db.env
+    ports:
+      - 27017:27017
+    volumes:
+      - $PWD/docker/data/db:/data/db
