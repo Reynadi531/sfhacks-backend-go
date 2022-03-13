@@ -33,7 +33,6 @@ func InitDatabase() error {
 	}
 
 	Database = Connection.Database(os.Getenv("MONGO_DATABASE"))
-	fmt.Println(os.Getenv("MONGO_DATABASE"))
 
 	fmt.Println("[LOG] Database succesfully connected")
 	return nil
