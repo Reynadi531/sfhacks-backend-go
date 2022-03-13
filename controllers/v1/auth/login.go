@@ -79,7 +79,7 @@ func LoginController(c *fiber.Ctx) error {
 		})
 	}
 
-	id, _ := result.Id.MarshalJSON()
+	id := result.Id
 
 	token, err := utils.GenerateToken(strings.Trim(string(id), "\""))
 

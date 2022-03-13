@@ -4,18 +4,17 @@ import (
 	"context"
 
 	"go.mongodb.org/mongo-driver/bson"
-	"go.mongodb.org/mongo-driver/bson/primitive"
 	"go.mongodb.org/mongo-driver/mongo"
 )
 
 type UserBSON struct {
-	Id       primitive.ObjectID `bson:"_id,omitempty"`
-	Name     string             `bson:"name"`
-	Email    string             `bson:"email"`
-	Password string             `bson:"password"`
-	Phone    string             `bson:"phone"`
-	Age      int8               `bson:"age"`
-	Gender   string             `bson:"gender"`
+	Id       string `bson:"_id,omitempty"`
+	Name     string `bson:"name"`
+	Email    string `bson:"email"`
+	Password string `bson:"password"`
+	Phone    string `bson:"phone"`
+	Age      int8   `bson:"age"`
+	Gender   string `bson:"gender"`
 }
 
 func UserCollection() *mongo.Collection {

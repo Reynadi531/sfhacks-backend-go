@@ -5,6 +5,7 @@ import (
 	"github.com/Reynadi531/sfhacks-backend-go/utils"
 	"github.com/go-playground/validator/v10"
 	"github.com/gofiber/fiber/v2"
+	"github.com/google/uuid"
 	"golang.org/x/crypto/bcrypt"
 )
 
@@ -83,7 +84,10 @@ func RegisterController(c *fiber.Ctx) error {
 		})
 	}
 
+	uuidid := uuid.New()
+
 	inputuser := database.UserBSON{
+		Id:       uuidid.String(),
 		Name:     user.Name,
 		Email:    user.Email,
 		Password: string(hashedpassword),
