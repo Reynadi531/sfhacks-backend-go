@@ -12,10 +12,9 @@ import (
 )
 
 type LoggerRequest struct {
-	Heartrate  int16  `validate:"required,number"`
-	Breathrate int16  `validate:"required,number"`
-	Emotion    string `validate:"required"`
-	Result     string `validate:"required"`
+	Heartrate int16  `validate:"required,number"`
+	Emotion   string `validate:"required"`
+	Result    string `validate:"required"`
 }
 
 type ErrorResponse struct {
